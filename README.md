@@ -1,9 +1,12 @@
-Pra rodar o projeto
+Pra rodar o projeto:
 
-git clone git@github.com:ViniDill/restaurant.git
-cd restaurant
-yarn
+git clone git@github.com:ViniDill/restaurant.git;
 
-para rodar
+cd restaurant;
 
-yarn dev
+yarn;
+
+
+para rodar:
+
+yarn dev;
