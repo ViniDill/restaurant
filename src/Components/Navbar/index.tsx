@@ -23,7 +23,6 @@ const NavBar: React.FC = () => {
           HOME
         </Button>
         <Button
-          href="#text-buttons"
           className="AboutUsButton"
           onClick={() => {
             navigate("/about-us");
@@ -39,21 +38,17 @@ const NavBar: React.FC = () => {
         >
           CARDÁPIO
         </Button>
-        <Button href="#text-buttons" className="ContactsButton">
-          CONTATOS
-        </Button>
-        <Button href="#text-buttons" className="FacebookButton">
+        <Button className="ContactsButton">CONTATOS</Button>
+        <Button className="FacebookButton">
           <FacebookIcon className="FacebookIcon" />
         </Button>
-        <Button href="#text-buttons" className="InstagramButton">
+        <Button className="InstagramButton">
           <InstagramIcon className="InstagramIcon" />
         </Button>
-        <Button href="#text-buttons" className="ShoppingCartButton">
+        <Button className="ShoppingCartButton">
           <ShoppingCartIcon className="ShoppingCartIcon" />
         </Button>
-        <Button href="#text-buttons" className="OrderButton">
-          FAÇA SEU PEDIDO
-        </Button>
+        <Button className="OrderButton">FAÇA SEU PEDIDO</Button>
       </div>
     </Container>
   );
