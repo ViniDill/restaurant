@@ -38,7 +38,14 @@ const NavBar: React.FC = () => {
         >
           CARDÁPIO
         </Button>
-        <Button className="ContactsButton">CONTATOS</Button>
+        <Button
+          className="ContactsButton"
+          onClick={() => {
+            navigate("/contacts");
+          }}
+        >
+          CONTATOS
+        </Button>
         <Button className="FacebookButton">
           <FacebookIcon className="FacebookIcon" />
         </Button>
