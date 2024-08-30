@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Tests from "../Pages/Tests";
 import Menu from "../Pages/Menu";
 import PageNotFound from "../Pages/PageNotFound";
+import AboutUs from "../Pages/AboutUs";
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/tests" element={<Tests />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
