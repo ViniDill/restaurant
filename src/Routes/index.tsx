@@ -3,6 +3,7 @@ import Login from "../Pages/Login";
 import Home from "../Pages/Home";
 import Tests from "../Pages/Tests";
 import Menu from "../Pages/Menu";
+import PageNotFound from "../Pages/PageNotFound";
 
 function AppRoutes() {
   return (
@@ -13,8 +14,7 @@ function AppRoutes() {
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/tests" element={<Tests />} />
-        <Route path="*" element={<div>404 Not Found</div>} />
-        {/* Página de erro 404 */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
