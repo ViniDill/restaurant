@@ -1,15 +1,13 @@
 import React from "react";
-
 import { Container } from "./styles";
-
 import NavBar from "../../Components/Navbar";
 
 const Home: React.FC = () => {
   return (
     <Container>
       <NavBar />
-      <h1>Home</h1>
-      <p>Welcome to the home page!</p>
+      <h1>Deixe seu dia mais saboroso!!!</h1>
+      <p>O xis mais delicioso da região</p>
     </Container>
   );
 };
