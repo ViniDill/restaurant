@@ -1,10 +1,17 @@
 import React from "react";
 import Card from "../../Components/Card";
 import { Container } from "./styles";
+import ContactCard from "../../Components/ContactCard";
 
 const Tests: React.FC = () => {
   return (
     <Container>
+      <div>
+        <ContactCard type="email" value="contato@empresa.com" />
+        <ContactCard type="phone" value="+5511999999999" />
+        <ContactCard type="facebook" value="https://facebook.com/empresa" />
+        <ContactCard type="instagram" value="https://instagram.com/empresa" />
+      </div>
       <h1>Teste</h1>
       <Card
         image={<img src="./icons/Cheers.png" alt="xis" />}
