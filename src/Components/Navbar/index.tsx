@@ -14,17 +14,21 @@ const NavBar: React.FC = () => {
     <Container>
       <img src="./icons/Cheers.png" alt="logo" className="Image" />
       <div className="icons">
-        <Button href="#text-buttons" className="HomeButton">
+        <Button
+          className="HomeButton"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           HOME
         </Button>
         <Button href="#text-buttons" className="AboutUsButton">
           SOBRE NÓS
         </Button>
         <Button
-          href="#text-buttons"
           className="MenuButton"
           onClick={() => {
-            navigate("/login");
+            navigate("/menu");
           }}
         >
           CARDÁPIO
