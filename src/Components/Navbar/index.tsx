@@ -22,7 +22,13 @@ const NavBar: React.FC = () => {
         >
           HOME
         </Button>
-        <Button href="#text-buttons" className="AboutUsButton">
+        <Button
+          href="#text-buttons"
+          className="AboutUsButton"
+          onClick={() => {
+            navigate("/about-us");
+          }}
+        >
           SOBRE NÓS
         </Button>
         <Button
