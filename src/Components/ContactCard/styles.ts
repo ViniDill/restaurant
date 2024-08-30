@@ -9,8 +9,9 @@ export const Card = styled.div`
   border-radius: 8px;
   background-color: lightgray;
   margin-bottom: 10px;
-  height: 150px;
+  height: 250px;
   justify-content: space-evenly;
+  width: 350px;
 `;
 
 export const Icon = styled.div`
@@ -24,7 +25,7 @@ export const Icon = styled.div`
 `;
 
 export const Text = styled.div`
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
 
   a {
