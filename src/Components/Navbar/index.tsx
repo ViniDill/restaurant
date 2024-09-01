@@ -2,7 +2,6 @@ import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 
