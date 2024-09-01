@@ -2,6 +2,7 @@ import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -46,10 +47,18 @@ const NavBar: React.FC = () => {
         >
           CONTATOS
         </Button>
-        <Button className="FacebookButton">
+        <Button
+          className="FacebookButton"
+          href="https://www.facebook.com/"
+          target="_blank"
+        >
           <FacebookIcon className="FacebookIcon" />
         </Button>
-        <Button className="InstagramButton">
+        <Button
+          className="InstagramButton"
+          href="https://www.instagram.com/"
+          target="_blank"
+        >
           <InstagramIcon className="InstagramIcon" />
         </Button>
         <Button className="ShoppingCartButton">
