@@ -46,10 +46,18 @@ const NavBar: React.FC = () => {
         >
           CONTATOS
         </Button>
-        <Button className="FacebookButton">
+        <Button
+          className="FacebookButton"
+          href="https://www.facebook.com"
+          target="_blank"
+        >
           <FacebookIcon className="FacebookIcon" />
         </Button>
-        <Button className="InstagramButton">
+        <Button
+          className="InstagramButton"
+          href="https://www.instagram.com"
+          target="_blank"
+        >
           <InstagramIcon className="InstagramIcon" />
         </Button>
         <Button className="ShoppingCartButton">
