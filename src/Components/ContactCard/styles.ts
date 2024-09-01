@@ -11,7 +11,7 @@ export const Card = styled.div`
   margin-bottom: 10px;
   height: 250px;
   justify-content: space-evenly;
-  width: 300px;
+  width: 350px;
 `;
 
 export const Icon = styled.div`

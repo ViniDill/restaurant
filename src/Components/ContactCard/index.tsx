@@ -1,19 +1,12 @@
 import React from "react";
-import {
-  Email,
-  Phone,
-  Facebook,
-  Instagram,
-  WhatsApp,
-} from "@mui/icons-material";
+import { Email, Phone, Facebook, Instagram } from "@mui/icons-material";
 import { Card, Icon, Text } from "./styles";
 
-type ContactType = "email" | "phone" | "facebook" | "instagram" | "whatsapp";
+type ContactType = "email" | "phone" | "facebook" | "instagram";
 
 interface ContactCardProps {
   type: ContactType;
   value: string;
-  label: string;
 }
 
 const getIcon = (type: ContactType) => {
@@ -26,46 +19,34 @@ const getIcon = (type: ContactType) => {
       return <Facebook className="Icon" />;
     case "instagram":
       return <Instagram className="Icon" />;
-    case "whatsapp":
-      return <WhatsApp className="Icon" />;
     default:
       return null;
   }
 };
 
-const getLink = (type: ContactType, value: string, label: string) => {
+const getLink = (type: ContactType, value: string) => {
   switch (type) {
     case "email":
-      return <a href={`mailto:${value}`}>{label}</a>;
+      return <a href={`mailto:${value}`}>{value}</a>;
     case "phone":
-      return <a href={`tel:${value}`}>{label}</a>;
-    case "whatsapp":
-      return (
-        <a
-          href={`https://wa.me/${value}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {label}
-        </a>
-      );
+      return <a href={`tel:${value}`}>{value}</a>;
     case "facebook":
     case "instagram":
       return (
         <a href={value} target="_blank" rel="noopener noreferrer">
-          {label}
+          {value}
         </a>
       );
     default:
-      return <span>{label}</span>;
+      return <span>{value}</span>;
   }
 };
 
-const ContactCard: React.FC<ContactCardProps> = ({ type, value, label }) => {
+const ContactCard: React.FC<ContactCardProps> = ({ type, value }) => {
   return (
     <Card>
       <Icon>{getIcon(type)}</Icon>
-      <Text>{getLink(type, value, label)}</Text>
+      <Text>{getLink(type, value)}</Text>
     </Card>
   );
 };
