@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div`
     display: flex;
@@ -15,6 +16,10 @@ export const Container = styled.div`
   h2 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
+
+  ${media.lessThan("medium")`
+    width: 300px;
+  `}
 `;
 
 export const ImageContainer = styled.div`
