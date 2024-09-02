@@ -41,7 +41,7 @@ export const Container = styled.nav`
     width: 25px;
   }
 
-  ${media.lessThan("medium")`
+  ${media.lessThan("large")`
     justify-content: space-between;
     padding: 0 20px;
 
@@ -60,14 +60,22 @@ export const Container = styled.nav`
 `;
 
 export const IconContainer = styled.div`
-  ${media.lessThan("medium")`
+  ${media.lessThan("large")`
     display: none;
   `}
+
+  .OrderButton {
+    background-color: orange;
+
+    &:hover {
+        background-color: orangered;
+    }
+  }
 `;
 
 export const MobileMenu = styled.div`
   display: none;
-  ${media.lessThan("medium")`
+  ${media.lessThan("large")`
     display: flex;
     position: absolute;
     right: 20px;
@@ -101,7 +109,7 @@ export const DrawerContent = styled.div`
     margin-top: 20px;
   }
 
-  ${media.lessThan("medium")`
+  ${media.lessThan("large")`
     align-items: center;
 
     .DrawerButton, .OrderButton {

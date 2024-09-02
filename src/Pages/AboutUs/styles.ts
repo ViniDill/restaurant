@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -36,11 +37,33 @@ export const Content = styled.div`
   align-items: center;
   padding: 70px;
   z-index: 1;
+
+
+  ${media.lessThan("large")`
+    flex-direction: column;
+    padding: 10px;
+  `}
+
+  ${media.lessThan("medium")`
+      margin-top: 100px;
+  `}
+
+  ${media.lessThan("small")`
+      margin-top: 580px;
+  `}
 `
 
 export const Text = styled.div` 
     width: 50%;
     padding: 100px;
+
+
+    ${media.lessThan("large")`
+        width: 100%;
+        padding: 10px;
+
+        margin-bottom: 25px;
+    `}
 
     h1{
         text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
@@ -50,6 +73,7 @@ export const Text = styled.div`
 
     p {
         font-size: 20px;
+        text-align: justify;
     }
 `
 
@@ -61,5 +85,12 @@ export const Image = styled.div`
         width: 355px;
         height: 520px;
         border: 5px solid #fff;
+        margin: auto;
+
+        ${media.lessThan("large")`
+          height: auto;
+          width: 235px;
+          height: 320px;
+        `}
     }
 `
