@@ -88,7 +88,6 @@ export const Image = styled.div`
         margin: auto;
 
         ${media.lessThan("large")`
-          height: auto;
           width: 235px;
           height: 320px;
         `}
