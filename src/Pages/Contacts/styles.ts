@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -6,14 +7,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-image: url('./icons/fundo.jpeg');
   background-size: cover;
   background-position: center;
   text-align: center;
-
   position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-attachment: fixed;
 
   &::before {
     content: "";
@@ -35,7 +38,17 @@ export const Title = styled.div`
     z-index: 1;
     width: 100%;
 
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+    h1 {
+    font-size: 64px;
+    color: black;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+    ${media.lessThan("medium")`
+      font-size: 44px;
+      text-align: center;
+    `}
+  }
 
 `
 
