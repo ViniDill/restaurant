@@ -35,7 +35,7 @@ const Card: React.FC<CardProps> = ({
         {types.map((type, index) => (
           <div key={index}>
             <p>{type}</p>
-            <p>R$ {prices[index]}</p>
+            <p>R$ {prices[index].toFixed(2)}</p>
           </div>
         ))}
       </PriceContainer>

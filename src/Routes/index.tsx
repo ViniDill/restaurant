@@ -6,6 +6,7 @@ import Menu from "../Pages/Menu";
 import PageNotFound from "../Pages/PageNotFound";
 import AboutUs from "../Pages/AboutUs";
 import Contacts from "../Pages/Contacts";
+import CustomerOrder from "../Pages/CustomerOrder";
 
 function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ function AppRoutes() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/customer-order" element={<CustomerOrder />} />
         <Route path="/tests" element={<Tests />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
