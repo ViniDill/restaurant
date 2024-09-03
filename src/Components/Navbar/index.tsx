@@ -70,7 +70,14 @@ const NavBar: React.FC = () => {
         <Button className="ShoppingCartButton">
           <ShoppingCartIcon className="ShoppingCartIcon" />
         </Button>
-        <Button className="OrderButton">FAÇA SEU PEDIDO</Button>
+        <Button
+          className="OrderButton"
+          onClick={() => {
+            navigate("/customer-order");
+          }}
+        >
+          FAÇA SEU PEDIDO
+        </Button>
       </IconContainer>
       <MobileMenu>
         <IconButton
@@ -143,7 +150,14 @@ const NavBar: React.FC = () => {
             <Button className="DrawerButton">
               <ShoppingCartIcon />
             </Button>
-            <Button className="OrderButton">FAÇA SEU PEDIDO</Button>
+            <Button
+              className="OrderButton"
+              onClick={() => {
+                navigate("/customer-order");
+              }}
+            >
+              FAÇA SEU PEDIDO
+            </Button>
           </DrawerContent>
         </Drawer>
       </MobileMenu>

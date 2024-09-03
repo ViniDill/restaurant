@@ -1,40 +1,21 @@
 import React from "react";
-import Card from "../../Components/Card";
 import { Container } from "./styles";
-import ContactCard from "../../Components/ContactCard";
+import DeliveryCard from "../../Components/DeliveryCard";
 
 const Tests: React.FC = () => {
   return (
     <Container>
-      <div>
-        <ContactCard type="email" value="contato@empresa.com" label="E-mail" />
-        <ContactCard type="phone" value="+5511999999999" label="Telefone" />
-        <ContactCard
-          type="facebook"
-          value="https://facebook.com/empresa"
-          label="Facebook"
-        />
-        <ContactCard
-          type="instagram"
-          value="https://instagram.com/empresa"
-          label="Instagram"
-        />
-      </div>
-      <h1>Teste</h1>
-      <Card
+      <DeliveryCard
+        title="Xis da Casa - Normal"
+        description="Pão, hambúrguer, presunto, queijo, ovo, alface, tomate e maionese"
+        prices={30.0}
         image={<img src="./icons/Cheers.png" alt="xis" />}
-        description="lorem ipsum dolor teste das sombras lanche saboroso agua e sal"
-        title="BACON"
-        types={["Normal", "Mini"]}
-        prices={[22.52, 18.27]}
       />
-
-      <Card
-        image={<img src="./icons/fundo.jpeg" alt="xis" />}
-        description="picles, ovo, queijo, mostarda, crem, vinagre, figado"
-        title="FRANGO"
-        types={["Normal", "Mini"]}
-        prices={[20.52, 16.27]}
+      <DeliveryCard
+        title="Xis da Casa - Mini"
+        description="Pão, hambúrguer, presunto, queijo, ovo, alface, tomate e maionese"
+        prices={26.0}
+        image={<img src="./icons/Cheers.png" alt="xis" />}
       />
     </Container>
   );
