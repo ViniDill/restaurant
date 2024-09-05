@@ -83,15 +83,11 @@ const OrderDetails: React.FC = () => {
       <AddContainer>
         <h2>Adicionar ao Carrinho</h2>
         <Incrementor />
-        <AddContainer>
-          <h2>Adicionar ao Carrinho</h2>
-          <Incrementor />
-          <AddButton
-            onClick={() => navigate(-1)}
-            text="Adicionar ao Carrinho"
-            price={deliveryCard.prices.toFixed(2)}
-          />
-        </AddContainer>
+        <AddButton
+          onClick={() => navigate(-1)}
+          text="Adicionar ao Carrinho"
+          price={deliveryCard.prices.toFixed(2)}
+        />
       </AddContainer>
     </Container>
   );
