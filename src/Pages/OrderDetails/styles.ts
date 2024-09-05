@@ -37,6 +37,7 @@ export const Observation = styled.div`
         resize: none;
         word-break: break-word;
         width: 100%;
+        color: black;
     }
 `
 
@@ -54,4 +55,54 @@ export const Division = styled.div`
     width: 100%;
     border-bottom: 1px solid green;
     background-color: green;
+`
+
+export const CardContainer = styled.div`
+    color: black;
+    display: flex;
+    gap: 30px;
+`
+export const ImageContainer = styled.div`
+    img{
+        width: 100px;
+
+        ${media.lessThan("medium")`
+            display: none;
+        `}
+    }
+`
+
+export const TextContainer = styled.div`
+    text-align: left;
+
+    h1 {
+        font-size: 30px;
+    }
+`
+
+export const BackButton = styled.button`
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 0;
+  margin: 80px 0 25px;
+
+  span {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    color: #007bff;
+  }
+`;
+
+
+export const AddContainer = styled.div`
+    display: flex;
+
+    justify-content: space-between;
 `
