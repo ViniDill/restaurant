@@ -19,7 +19,14 @@ const NavBar: React.FC = () => {
 
   return (
     <Container>
-      <img src="./icons/Cheers.png" alt="logo" className="Image" />
+      <img
+        src="./icons/Cheers.png"
+        alt="logo"
+        className="Image"
+        onClick={() => {
+          navigate("/");
+        }}
+      />
       <IconContainer>
         <Button
           className="HomeButton"

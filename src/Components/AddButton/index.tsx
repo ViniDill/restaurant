@@ -1,19 +1,18 @@
+// AddButton.tsx
 import React from "react";
+import { Button } from "@mui/material";
 
-import { Container } from "./styles";
-
-export interface AddButtonProps {
-  text: string;
-  price: number;
+interface AddButtonProps {
   onClick: () => void;
+  text: string;
+  price: number; // Deve ser um número
 }
 
-const AddButton: React.FC<AddButtonProps> = ({ text, price, onClick }) => {
+const AddButton: React.FC<AddButtonProps> = ({ onClick, text, price }) => {
   return (
-    <Container onClick={onClick}>
-      <p>{text}</p>
-      <p>+ R$ {price}</p>
-    </Container>
+    <Button onClick={onClick} variant="contained">
+      {text} - R$ {price.toFixed(2)}
+    </Button>
   );
 };
 
