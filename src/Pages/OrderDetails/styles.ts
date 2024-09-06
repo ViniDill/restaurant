@@ -5,9 +5,11 @@ export const Container = styled.div`
     width: 100vw;
     padding: 20px 20%;
     background-color: white;
+    overflow-x: hidden;
+    max-width: 100%;
 
     ${media.lessThan("medium")`
-        padding: 0;
+        padding: 3px;
     `}
 `
 
@@ -103,6 +105,12 @@ export const BackButton = styled.button`
 
 export const AddContainer = styled.div`
     display: flex;
-
     justify-content: space-between;
+    align-items: center;
+`
+
+export const IncrementorContainer = styled.div`
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
 `

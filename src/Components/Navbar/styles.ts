@@ -15,6 +15,10 @@ export const Container = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  img {
+    cursor: pointer;
+  }
 
   .Image {
     width: 100%;

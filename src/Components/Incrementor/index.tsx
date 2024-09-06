@@ -1,34 +1,38 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Box } from "@mui/material";
 
-function Incrementor() {
-  const [count, setCount] = useState(0);
+interface IncrementorProps {
+  onChange: (quantity: number) => void;
+}
+
+const Incrementor: React.FC<IncrementorProps> = ({ onChange }) => {
+  const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
-    setCount(count + 1);
+    const newCount = count + 1;
+    setCount(newCount);
+    onChange(newCount);
   };
 
   const handleDecrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
+    if (count > 1) {
+      const newCount = count - 1;
+      setCount(newCount);
+      onChange(newCount);
     }
   };
 
   return (
     <Box display="flex" alignItems="center">
-      {count > 0 ? (
-        <>
-          <Button
-            onClick={handleDecrement}
-            sx={{ fontSize: "24px", color: "black" }}
-          >
-            -
-          </Button>
-          <Box mx={2} sx={{ color: "black" }}>
-            {count}
-          </Box>
-        </>
-      ) : null}
+      <Button
+        onClick={handleDecrement}
+        sx={{ fontSize: "24px", color: "black" }}
+      >
+        -
+      </Button>
+      <Box mx={2} sx={{ color: "black" }}>
+        {count}
+      </Box>
       <Button
         onClick={handleIncrement}
         sx={{ fontSize: "24px", color: "black" }}
@@ -37,6 +41,6 @@ function Incrementor() {
       </Button>
     </Box>
   );
-}
+};
 
 export default Incrementor;

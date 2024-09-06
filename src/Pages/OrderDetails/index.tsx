@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import AddIngredients from "../../Components/AddIngredients";
 import RemoveIngredients from "../../Components/RemoveIngredients";
@@ -20,12 +20,58 @@ import {
   TextContainer,
   BackButton,
   AddContainer,
+  IncrementorContainer,
 } from "./styles";
+
+interface Ingredient {
+  title: string;
+  price: number;
+  quantity: number;
+}
 
 const OrderDetails: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const deliveryCard = location.state;
+
+  const [ingredients, setIngredients] = useState<Ingredient[]>([
+    { title: "Alface", price: 1.0, quantity: 0 },
+    { title: "Cheddar", price: 4.0, quantity: 0 },
+    { title: "Catupiry", price: 3.5, quantity: 0 },
+    { title: "Bacon", price: 3.0, quantity: 0 },
+    { title: "Ovo", price: 1.5, quantity: 0 },
+    { title: "Milho", price: 1.0, quantity: 0 },
+    { title: "Ervilha", price: 1.0, quantity: 0 },
+    { title: "Batata Palha", price: 1.5, quantity: 0 },
+    { title: "Mussarela", price: 3.0, quantity: 0 },
+    { title: "Tomate", price: 1.5, quantity: 0 },
+  ]);
+  const [incrementorQuantity, setIncrementorQuantity] = useState(1);
+
+  const totalIngredientsPrice = ingredients.reduce(
+    (total, ingredient) => total + ingredient.price * ingredient.quantity,
+    0
+  );
+
+  const finalPrice = deliveryCard
+    ? deliveryCard.prices + totalIngredientsPrice
+    : 0;
+
+  const updateIngredientQuantity = (title: string, quantity: number) => {
+    setIngredients((prevIngredients) =>
+      prevIngredients.map((ingredient) =>
+        ingredient.title === title ? { ...ingredient, quantity } : ingredient
+      )
+    );
+  };
+
+  const handleIncrementorChange = (quantity: number) => {
+    setIncrementorQuantity(quantity);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
@@ -62,17 +108,18 @@ const OrderDetails: React.FC = () => {
 
       <AddIngredientsContainer>
         <Subtitle>Adicionar Ingredientes</Subtitle>
-        <AddIngredients title="Alface" price={2.0} />
-        <AddIngredients title="Cheddar" price={2.0} />
-        <AddIngredients title="Catupiry" price={2.0} />
-        <AddIngredients title="Bacon" price={2.0} />
-        <AddIngredients title="Ovo" price={2.0} />
-        <AddIngredients title="Milho" price={2.0} />
-        <AddIngredients title="Ervilha" price={2.0} />
-        <AddIngredients title="Batata Palha" price={2.0} />
-        <AddIngredients title="Mussarela" price={2.0} />
-        <AddIngredients title="Tomate" price={2.0} />
+        {ingredients.map((ingredient) => (
+          <AddIngredients
+            key={ingredient.title}
+            title={ingredient.title}
+            price={ingredient.price}
+            onChangeQuantity={(quantity) =>
+              updateIngredientQuantity(ingredient.title, quantity)
+            }
+          />
+        ))}
       </AddIngredientsContainer>
+
       <Observation>
         <h2>
           <TextsmsIcon /> Alguma observação?
@@ -80,13 +127,15 @@ const OrderDetails: React.FC = () => {
         <textarea placeholder="Observação"></textarea>
         <Division />
       </Observation>
+
       <AddContainer>
-        <h2>Adicionar ao Carrinho</h2>
-        <Incrementor />
+        <IncrementorContainer>
+          <Incrementor onChange={handleIncrementorChange} />
+        </IncrementorContainer>
         <AddButton
           onClick={() => navigate(-1)}
           text="Adicionar ao Carrinho"
-          price={deliveryCard.prices.toFixed(2)}
+          price={finalPrice * incrementorQuantity}
         />
       </AddContainer>
     </Container>
